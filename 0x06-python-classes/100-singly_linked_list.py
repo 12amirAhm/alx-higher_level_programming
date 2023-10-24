@@ -1,32 +1,61 @@
 #!/usr/bin/python3
+""" Creates an empty class called Node
+"""
+
 class Node:
+     """ Empty class with size private attribute
+    """
     def __init__(self, data, next_node=None):
+         """
+                Instantiation with size
+        Args:
+            size: size of the Node
+            position: postion of the square
+        """
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
+        """
+        Returns the data
+        """
         return self.__data
 
     @data.setter
     def data(self, value):
+        """
+        Returns the data
+        """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
+        """
+        Returns the data
+        """
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
+        """
+        Returns the next_node of the Node
+        """
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
 class SinglyLinkedList:
+    """
+         this is the  singlylistedlis
+        """
     def __str__(self):
+        """
+        Returns the self
+        """
         rtn = ""
         ptr = self.__head
 
@@ -39,9 +68,15 @@ class SinglyLinkedList:
         return rtn
 
     def __init__(self):
+        """
+        Returns the head
+        """
         self.__head = None
 
     def sorted_insert(self, value):
+        """
+        Returns the sorted_insert
+        """
         ptr = self.__head
 
         while ptr is not None:
